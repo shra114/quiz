@@ -1,0 +1,8 @@
+Question: Where did you buy your bike
+Total options: 5
+Option1: Kamareddy
+Option2: Hyderabad
+Option3: Mumbai
+Option4: Bangalore
+Option5: Sringeri
+Answer option: 4

@@ -1,0 +1,6 @@
+Question: What is your bike company?
+Total options: 3
+Option1: Hero
+Option2: Yamaha
+Option3: TVS
+Answer option: 2
