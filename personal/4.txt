@@ -1,0 +1,6 @@
+Question: Where do you work?
+Total options: 3
+Option1: Ahmedabad
+Option2: Alaska
+Option3: Wakanda
+Answer option: 3

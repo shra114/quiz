@@ -31,7 +31,10 @@ class Question:
         str_in = parse_file_as_str(file_path)
         self.question = get_str_bw_here(str_in,"Question: " , "Total options: ")
         total_options = int(get_str_bw_here(str_in,"Total options: ","\n").strip())
-        for i in range()
+        for i in range(total_options):
+            option_str = "Option"+str(i+1)+": "
+            self.options.append(get_str_bw_here(str_in,option_str,"\n"))
+        self.answer_option=int(get_str_bw_here(str_in,"Answer option: ","\n"))
         return None
 
 
@@ -71,12 +74,13 @@ class Question:
         self.show_options()
         print ("Which option is right?")
         answer_option = int(input())
-        return (answer_option==self.answer_option)
+        point =(answer_option==self.answer_option)
+        return point
 
 
 
-name_question  = Question()
-place_question  = Question()
+#name_question  = Question()
+#place_question  = Question()
 #name_question.take_inputs()
 #name_question.write_to_file("personal")
 
@@ -86,19 +90,28 @@ place_question  = Question()
 
 class Quiz:
     def __init__(self):
-        print("Hi")
+        print("Welcome to quiz program!")
 
     def create_questions(self, dir_path):
+        print("You are creating question in:", dir_path)
+        while(1):
+            questoin_obj = Question()
+            questoin_obj.take_inputs()
+            questoin_obj.write_to_file(dir_path)
+            if(input("Exit entering questions?\n")=="yes"):
+                break
         return  None
 
     def run_quiz(self,dir_path):
+        print("You are running quiz from", dir_path)
         ls_out=get_lsout(dir_path)
         ls_out.sort()
         if("0.txt" in ls_out):
             ls_out.remove("0.txt")
-        print ("Total question in the directory :", len(ls_out))
+        print ("Total questions in the directory",dir_path," :", len(ls_out))
         points = 0
-        num = int(input("How many question to ask?"))
+        num = int(input("How many questions should I ask?\n"))
+        num_asked  = num
         if(num > len(ls_out)):
             num = len(ls_out)
 
@@ -113,11 +126,8 @@ class Quiz:
             question_obj = Question()
             question_obj.read_from_file(dir_path+"/"+question)
             points += int(question_obj.run_quiz())
-        print("Points = ",points)
+        print("Points = ",points,"/",num_asked)
         return points
 
-
-
-
-
-
+#quiz_obj = Quiz()
+#quiz_obj.run_quiz("personal")

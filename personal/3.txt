@@ -1,0 +1,7 @@
+Question: What is your birth place?
+Total options: 4
+Option1: Delhi
+Option2: Hyderabad
+Option3: Mumbai
+Option4: Tiruvannamalai
+Answer option: 4
